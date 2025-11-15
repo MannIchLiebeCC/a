@@ -1,0 +1,129 @@
+﻿@model IEnumerable<a.Models.GP_Categories>
+
+@{
+	ViewData["Title"] = "Index";
+}
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Gate Pass List</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a asp-controller="AR" asp-action="Create" class="btn btn-primary">Create New Gate Pass</a>
+		</div>
+	</div>
+	<br /><br />
+	<table style="width:100%">
+		<thead>
+			<tr>
+				<th>Gate Pass Number</th>
+				<th>Application</th>
+				<th>Name</th>
+				<th>Address</th>
+				<th>Date</th>
+				<th>Class</th>
+				<th>Department</th>
+				<th>Course</th>
+				<th>Participants</th>
+				<th>Year</th>
+				<th>Plate Number</th>
+				<th>Date Expiration</th>
+				<th>Vehicle</th>
+				<th>Marker</th>
+				<th>Color</th>
+				<th>Load and Regrister</th>
+				<th>Approval 1</th>
+				<th>Approval 2</th>
+				<th>Approval 3</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var obj in Model)
+			{
+				<tr>
+					<td width="10%">
+						@obj.GP_Num 
+					</td>
+					<td width="20%">
+						@obj.GP_App4sch
+
+					</td>
+					<td width="20%">
+						@obj.GP_Name
+
+					</td>
+					<td width="10%">
+						@obj.GP_Address
+
+					</td>
+					<td width="20%">
+						@obj.GP_Date
+
+					</td>
+					<td width="20%">
+						@obj.GP_Classification
+
+					</td>
+					<td width="20%">
+						@obj.GP_Department
+
+					</td>
+					<td width="20%">
+						@obj.GP_Course
+
+					</td>
+					<td width="20%">
+						@obj.GP_Year
+
+					</td>
+					<td width="20%">
+						@obj.GP_PlateNumber
+
+					</td>
+					<td width="20%">
+						@obj.GP_DateExpiration
+
+					</td>
+					<td width="20%">
+						@obj.GP_Vehicle
+
+					</td>
+					<td width="20%">
+						@obj.GP_Marker
+
+					</td>
+					<td width="20%">
+						@obj.GP_Color
+
+					</td>
+					<td width="20%">
+						@obj.GP_LoadnRegis
+
+					</td>
+					<td width="20%">
+						@obj.GP_Approval1
+
+					</td>
+					<td width="20%">
+						@obj.GP_Approval2
+
+					</td>
+					<td width="20%">
+						@obj.GP_Approval3
+					</td>
+					
+
+					<td>
+						<div class="w-20 btn-group" role="group">
+							<a asp-action="Edit" asp-route-id="@obj.GP_Num">&nbsp;Edit&nbsp; </a>|
+							<a asp-action="Details" asp-route-id="@obj.GP_Num">&nbsp;Details&nbsp;</a>|
+							<a asp-action="Delete" asp-route-id="@obj.GP_Num">&nbsp;Delete&nbsp;</a>|
+
+						</div>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

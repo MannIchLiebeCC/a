@@ -1,0 +1,132 @@
+﻿@model a.Models.AR_Categories
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_ReserveNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_ReserveNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_NameOrg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_NameOrg)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_ActivityTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_ActivityTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_Venue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_Venue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_DateSet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_DateSet)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_DateNeeded)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_DateNeeded)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_TimeFrom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_TimeFrom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_TimeTo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_TimeTo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_Participants)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_Participants)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_Speaker)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_Speaker)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_PurposeObj)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_PurposeObj)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_EquipF)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_EquipF)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_NatureAct)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_NatureAct)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_SourceFund)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_SourceFund)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_Approval1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_Approval1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_Approval2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_Approval2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_Approval3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_Approval3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_Approval4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_Approval4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AR_Approval5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AR_Approval5)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AR_ReserveNum">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

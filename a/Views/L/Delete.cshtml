@@ -1,0 +1,16 @@
+@model a.Models.L_Categories
+
+<h2>Delete Student</h2>
+
+<p>Are you sure you want to delete this record?</p>
+
+<div class="card p-3" style="width:300px;">
+    <p><strong>Name:</strong> @Model.L_StuName</p>
+    <p><strong>Locker:</strong> @Model.LockerCode</p>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="L_StuID" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

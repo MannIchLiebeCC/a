@@ -1,0 +1,18 @@
+﻿@model a.Models.L_Categories
+
+<h2>Student Information</h2>
+
+<div class="card p-3" style="width: 300px;">
+    @if (Model.L_LoadnRegis != null)
+    {
+        <img src="data:image/jpeg;base64,@Convert.ToBase64String(Model.L_LoadnRegis)"
+             width="250" height="250" style="object-fit:cover;" />
+    }
+
+    <p><strong>Name:</strong> @Model.L_StuName</p>
+    <p><strong>Locker:</strong> @Model.LockerCode</p>
+    <p><strong>Semester:</strong> @Model.L_Semester</p>
+    <p><strong>Contact:</strong> @Model.L_ContactNumber</p>
+
+    <a asp-action="Index" class="btn btn-primary">Back</a>
+</div>

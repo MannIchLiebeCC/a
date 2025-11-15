@@ -1,0 +1,146 @@
+﻿@model a.Models.AR_Categories
+<form method="post" asp-action="Edit">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Edit Area Reservation</h2>
+			<hr />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_ReserveNum" class="control-label"></label>
+			<input asp-for="AR_ReserveNum" class="form-control" readonly />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_NameOrg" class="control-label"></label>
+			<input asp-for="AR_NameOrg" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_ActivityTitle" class="control-label"></label>
+			<input asp-for="AR_ActivityTitle" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_Venue" class="control-label"></label>
+			<input asp-for="AR_Venue" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_DateSet" class="control-label"></label>
+
+			<input asp-for="AR_DateSet" class="form-control" />
+			<span asp-validation-for="AR_DateSet" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_DateNeeded" class="control-label"></label>
+			<div class="form-group">
+				<input asp-for="AR_DateNeeded" type="date" />
+				<span asp-validation-for="AR_DateNeeded" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_TimeFrom" class=" control-label"></label>
+			<div class="form-group">
+				<input asp-for="AR_TimeFrom" type="time" />
+				<span asp-validation-for="AR_TimeFrom" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_TimeTo" class="control-label"></label>
+					<div class="form-group">
+						<input asp-for="AR_TimeTo" type="time" />
+						<span asp-validation-for="AR_TimeTo" class="text-danger"></span>
+					</div>		</div>
+		<div class="form-group">
+			<label asp-for="AR_Participants" class="control-label"></label>
+			<input asp-for="AR_Participants" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_Speaker" class="control-label"></label>
+			<input asp-for="AR_Speaker" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_PurposeObj" class="control-label"></label>
+			<input asp-for="AR_PurposeObj" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_EquipF" class="control-label"></label>
+			<input asp-for="AR_EquipF" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_NatureAct" class="control-label"></label>
+			<input asp-for="AR_NatureAct" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_SourceFund" class="control-label"></label>
+			<input asp-for="AR_SourceFund" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_Approval1" class="control-label"></label>
+
+			@Html.DropDownList("AR_Approval1",
+			new List<SelectListItem> {
+						new SelectListItem { Text = "Pending", Value = "Pending" },
+						new SelectListItem { Text = "Approved", Value = "Approved" },
+						new SelectListItem { Text = "Denied", Value = "Denied" }
+						},
+						new { @class = "form-control" })
+
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_Approval2" class="control-label"></label>
+
+			@Html.DropDownList("AR_Approval2",
+						new List<SelectListItem> {
+						new SelectListItem { Text = "Pending", Value = "Pending" },
+						new SelectListItem { Text = "Approved", Value = "Approved" },
+						new SelectListItem { Text = "Denied", Value = "Denied" }
+						},
+						new { @class = "form-control" })
+
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_Approval3" class="control-label"></label>
+
+			@Html.DropDownList("AR_Approval3",
+						new List<SelectListItem> {
+						new SelectListItem { Text = "Pending", Value = "Pending" },
+						new SelectListItem { Text = "Approved", Value = "Approved" },
+						new SelectListItem { Text = "Denied", Value = "Denied" }
+						},
+						new { @class = "form-control" })
+
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_Approval4" class="control-label"></label>
+
+			@Html.DropDownList("AR_Approval4",
+						new List<SelectListItem> {
+						new SelectListItem { Text = "Pending", Value = "Pending" },
+						new SelectListItem { Text = "Approved", Value = "Approved" },
+						new SelectListItem { Text = "Denied", Value = "Denied" }
+						},
+						new { @class = "form-control" })
+
+		</div>
+		<div class="form-group">
+			<label asp-for="AR_Approval5" class="control-label"></label>
+
+			@Html.DropDownList("AR_Approval5",
+						new List<SelectListItem> {
+						new SelectListItem { Text = "Pending", Value = "Pending" },
+						new SelectListItem { Text = "Approved", Value = "Approved" },
+						new SelectListItem { Text = "Denied", Value = "Denied" }
+						},
+						new { @class = "form-control" })
+
+		</div>
+
+		<br>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">Update</button>
+			<a asp-controller="Student" asp-action="Index">Back to List</a>
+		</div>
+	</div>
+</form>
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}

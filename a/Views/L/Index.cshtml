@@ -1,0 +1,69 @@
+﻿@model IEnumerable<a.Models.L_Categories>
+
+<h2>Student List</h2>
+    <a asp-controller="L" asp-action="Create" class="btn btn-primary">Create Locker Reservation</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Order Number</th>
+            <th>ID Number</th>
+            <th>Student Name</th>
+            <th>Locker Code</th>
+            <th>Semester</th>
+            <th>Contact</th>
+            <th>Validation</th>
+            <th>Profile</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td width="20%">
+                    @item.L_Num
+                </td>                
+                <td width="20%">
+                    @item.L_StuID
+                </td>
+                <td width="20%">
+                    @item.L_StuName
+                </td>
+                <td width="20%">
+                    @item.LockerCode
+                </td>
+                <td width="20%">
+                    @item.L_Semester
+                </td>
+                <td width="20%">
+                    @item.L_ContactNumber
+                </td>
+                <td width="20%">
+                    @item.L_Approval
+                </td>
+                <td>
+
+                    @if (item.L_LoadnRegis != null)
+                    {
+                        <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.L_LoadnRegis)"
+                             width="70" height="70" style="object-fit:cover;" />
+                    }
+                    else
+                    {
+                        <span>No Image</span>
+                    }
+                </td>
+
+                <td>
+                    @if (item.L_LoadnRegis != null)
+                    {
+                        <a asp-action="Download" asp-route-id="@item.L_Num" class="btn btn-sm btn-success">Download</a>
+                        <a asp-action="Details" asp-route-id="@item.L_Num" class="btn btn-info btn-sm">View</a>
+                        <a asp-action="Edit" asp-route-id="@item.L_Num" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.L_Num" class="btn btn-danger btn-sm">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

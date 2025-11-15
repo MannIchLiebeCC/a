@@ -1,0 +1,55 @@
+﻿@model a.Models.L_Categories
+@{
+	ViewData["Title"] = "Create";
+}
+<div class="container p-3">
+
+<h2>Create Student</h2>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="L_StuID"></label>
+        <input asp-for="L_StuID" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="L_StuName"></label>
+        <input asp-for="L_StuName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LockerCode"></label>
+        <input asp-for="LockerCode" class="form-control" />
+    </div>
+
+        <div class="form-group">
+            <label asp-for="L_Semester" class="control-label"></label>
+
+            @Html.DropDownList("L_Semester",
+            new List<SelectListItem> {
+                        new SelectListItem { Text = "1st Semester", Value = "1st Semester" },
+                        new SelectListItem { Text = "2nd Semester", Value = "2nd Semester" },
+                        new SelectListItem { Text = "Summer Semester", Value = "Summer Semester" },
+                        new SelectListItem { Text = "All Semesters", Value = "All Semesters" }
+                        },
+                        new { @class = "form-control" })
+
+        </div>
+
+    <div class="form-group">
+        <label asp-for="L_ContactNumber"></label>
+        <input asp-for="L_ContactNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Upload Image</label>
+        <input asp-for="ImageFile" type="file" accept="image/*" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

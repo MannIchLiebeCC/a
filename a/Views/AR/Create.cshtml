@@ -1,0 +1,106 @@
+﻿@model a.Models.AR_Categories
+@{
+	ViewData["Title"] = "Create";
+}
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Create Student</h2>
+		</div>
+	</div>
+	<br />
+	<hr />
+	<div class="row">
+		<div class="col-md-4">
+			<form method="post" asp-action="Create">
+				<div class="form-group">
+					<label class="control-label">Name of the Organization</label>
+					<input asp-for=" AR_NameOrg " class="form-control" />
+					<span asp-validation-for=" AR_NameOrg" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Title of the Activity</label>
+					<input asp-for="AR_ActivityTitle" class="form-control" />
+					<span asp-validation-for="AR_ActivityTitle" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Venue</label>
+					<input asp-for="AR_Venue" class="form-control" />
+					<span asp-validation-for="AR_Venue" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Days needed</label>
+					<input asp-for="AR_DateSet" class="form-control" />
+					<span asp-validation-for="AR_DateSet" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Date of Reservation</label>
+					<div class="form-group">
+						<input asp-for="AR_DateNeeded" type="date" />
+						<span asp-validation-for="AR_DateNeeded" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Time Starts From</label>
+					<div class="form-group">
+						<input asp-for="AR_TimeFrom" type="time" />
+						<span asp-validation-for="AR_TimeFrom" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Time Ends At</label>
+					<div class="form-group">
+						<input asp-for="AR_TimeTo" type="time" />
+						<span asp-validation-for="AR_TimeTo" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Particpants</label>
+					<input asp-for="AR_Participants" class="form-control" />
+					<span asp-validation-for="AR_Participants" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Speaker of the Party</label>
+					<input asp-for="AR_Speaker" class="form-control" />
+					<span asp-validation-for="AR_Speaker" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Purpose of for the Party</label>
+					<input asp-for="AR_PurposeObj" class="form-control" />
+					<span asp-validation-for="AR_PurposeObj" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="AR_EquipF" class="control-label">List of Equipment Being Used</label>
+					<input asp-for="AR_EquipF" class="form-control" />
+					<span asp-validation-for="AR_EquipF" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Nature of the Party</label>
+					<input asp-for="AR_NatureAct" class="form-control" />
+					<span asp-validation-for="AR_NatureAct" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Source of the Party's Funds'</label>
+					<input asp-for="AR_SourceFund" class="form-control" />
+					<span asp-validation-for="AR_SourceFund" class="text-danger"></span>
+				</div>
+
+
+				<br><br>
+				<div class="form-group">
+					<input type="submit" value="Create" class="btn btn-primary" />
+				</div>
+			</form>
+		</div>
+	</div>
+	<div>
+		<a asp-action="Index">Back to List</a>
+	</div>
+	</<div>
+	</div>
+</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

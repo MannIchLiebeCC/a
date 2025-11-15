@@ -1,0 +1,112 @@
+﻿@model IEnumerable<a.Models.AR_Categories>
+
+@{
+	ViewData["Title"] = "Index";
+}
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Area Reservation List</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a asp-controller="AR" asp-action="Create" class="btn btn-primary">Create Area Reservation</a>
+		</div>
+	</div>
+	<br /><br />
+	<table style="width:80%">
+		<thead>
+			<tr>
+				<th>Reserve Number</th>
+				<th>Name of the Organization</th>
+				<th>Title of the Activity</th>
+				<th>Venue</th>
+				<th>Number of Day/s Used</th>
+				<th>Date to Use</th>
+				<th>Time From</th>
+				<th>Time To</th>
+				<th>Participants</th>
+				<th>Speaker</th>
+				<th>Purpose</th>
+				<th>Equipment</th>
+				<th>Nature of the Activity</th>
+				<th>Source of Funding</th>
+				<th>Approval 1</th>
+				<th>Approval 2</th>
+				<th>Approval 3</th>
+				<th>Approval 4</th>
+				<th>Approval 5</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var obj in Model)
+			{
+				<tr>
+					<td width="10%">
+						@obj.AR_ReserveNum
+					</td>
+					<td width="20%">
+						@obj.AR_NameOrg
+					</td>
+					<td width="20%">
+						@obj.AR_ActivityTitle
+					</td>
+					<td width="10%">
+						@obj.AR_Venue
+					</td>
+					<td width="20%">
+						@obj.AR_DateSet
+					</td>
+					<td width="20%">
+						@obj.AR_DateNeeded
+					</td>
+					<td width="20%">
+						@obj.AR_TimeFrom
+					</td>
+					<td width="20%">
+						@obj.AR_TimeTo
+					</td>
+					<td width="20%">
+						@obj.AR_Participants
+					</td>
+					<td width="20%">
+						@obj.AR_Speaker
+					</td>
+					<td width="20%">
+						@obj.AR_PurposeObj
+					</td>
+					<td width="20%">
+						@obj.AR_EquipF
+					</td>
+					<td width="20%">
+						@obj.AR_NatureAct
+					</td>
+					<td width="20%">
+						@obj.AR_SourceFund
+					</td>
+					<td width="20%">
+						@obj.AR_Approval1
+					</td>
+					<td width="20%">
+						@obj.AR_Approval2
+					</td>
+					<td width="20%">
+						@obj.AR_Approval3
+					</td>
+					<td width="20%">
+						@obj.AR_Approval4
+					</td>
+					<td width="20%">
+						@obj.AR_Approval5
+					</td>
+					<td width="20%">
+							<a asp-action="Edit" asp-route-id="@obj.AR_ReserveNum">&nbsp;Edit&nbsp; </a>|
+							<a asp-action="Details" asp-route-id="@obj.AR_ReserveNum">&nbsp;Details&nbsp;</a>|
+							<a asp-action="Delete" asp-route-id="@obj.AR_ReserveNum">&nbsp;Delete&nbsp;</a>|
+
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
