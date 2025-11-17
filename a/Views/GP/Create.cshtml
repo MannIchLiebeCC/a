@@ -1,0 +1,102 @@
+﻿@model a.Models.GP_Categories
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container p-3">
+
+    <h2>Create Student</h2>
+
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="GP_App4sch"></label>
+            <input asp-for="GP_App4sch" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="GP_Name"></label>
+            <input asp-for="GP_Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="GP_Address"></label>
+            <input asp-for="GP_Address" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">Date of Reservation</label>
+            <div class="form-group">
+                <input asp-for="GP_Date" type="date" />
+                <span asp-validation-for="GP_Date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="GP_Classification" class="control-label"></label>
+            @Html.DropDownList("GP_Classification",
+            new List<SelectListItem> {
+                        new SelectListItem { Text = "Student", Value = "Student" },
+                        new SelectListItem { Text = "Teacher", Value = "Teacher" },
+                        new SelectListItem { Text = "Other Staff", Value = "Other Staff" }
+                        },
+                        new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label asp-for="GP_Department" class="control-label"></label>
+            @Html.DropDownList("GP_Department",
+                        new List<SelectListItem> {
+                        new SelectListItem { Text = "BSIT", Value = "BSIT" },
+                        new SelectListItem { Text = "BSCPE", Value = "BSIT" },
+                        new SelectListItem { Text = "BSCS", Value = "BSIT" }
+                        },
+                        new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label asp-for="GP_Year" class="control-label"></label>
+            @Html.DropDownList("GP_Year",
+                        new List<SelectListItem> {
+                        new SelectListItem { Text = "1st Year", Value = "1st Year" },
+                        new SelectListItem { Text = "2nd Year", Value = "2nd Year" },
+                        new SelectListItem { Text = "3rd Year", Value = "3rd Year" },
+                        new SelectListItem { Text = "4th Year", Value = "4th Year" }
+
+                        },
+                        new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label asp-for="GP_PlateNumber"></label>
+            <input asp-for="GP_PlateNumber" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="GP_Vehicle" class="control-label"></label>
+            @Html.DropDownList("GP_Vehicle",
+                        new List<SelectListItem> {
+                        new SelectListItem { Text = "Bicycle", Value = "Bicycle" },
+                        new SelectListItem { Text = "Motorcycle", Value = "Motorcycle" },
+                        new SelectListItem { Text = "Car", Value = "Car" }
+                        },
+                        new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label class="control-label">Date of Expiration</label>
+            <div class="form-group">
+                <input asp-for="GP_DateExpiration" type="date" />
+                <span asp-validation-for="GP_DateExpiration" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="GP_Marker"></label>
+            <input asp-for="GP_Marker" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="GP_Color"></label>
+            <input asp-for="GP_Color" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Upload Image</label>
+            <input asp-for="ImageFile" type="file" accept="image/*" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
